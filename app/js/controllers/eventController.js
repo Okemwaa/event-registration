@@ -2,6 +2,7 @@
   "use strict";
   angular.module('eventsApp')
     .controller('eventController', function eventController($scope) {
+      $scope.sortorder = 'name';
       $scope.event = {
         name: 'Angular Boot Camp',
         date: '1/1/2013',
@@ -15,15 +16,15 @@
         sessions: [{
             name: 'Directives Masterclass',
             creator: 'Mona',
-            duration: '1 hr',
-            level: 'Beginner',
+            duration: 1,
+            level: 'introductory',
             abstract: 'Learn the ins and outs of direvctives',
             upVoteCount: 0
           },
           {
             name: 'Two way binding',
             creator: 'Getty',
-            duration: '2 hr',
+            duration: 3,
             level: 'Advanced',
             abstract: 'Learn all about two way binding in Angular',
             upVoteCount: 0
