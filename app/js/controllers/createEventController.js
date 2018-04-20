@@ -1,10 +1,13 @@
 (function() {
   "use strict";
   angular.module('eventsApp')
-    .controller('createEventController', function createEventController($scope) {
+    .controller('createEventController', function createEventController($scope, eventData, $log) {
       $scope.saveEvent = function(event, newEventForm) {
         if (newEventForm.$valid) {
-          $scope.event = event;
+          eventData.save(event)
+            .$promise
+            .then(function(response) { console.log('success', response); })
+            .catch(function(response) { console.log('failure', response); });
         }
       };
       $scope.cancelEdit = function() {
